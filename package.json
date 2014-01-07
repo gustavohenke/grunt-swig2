@@ -1,0 +1,21 @@
+{
+    "name": "grunt-swig2",
+    "description": "Grunt task for rendering Swig templates.",
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/gustavohenke/grunt-swig2.git"
+    },
+    "dependencies": {
+        "swig": "~1.2.2"
+    },
+    "devDependencies": {
+        "grunt-jscs-checker": "~0.3.0",
+        "grunt-mocha-test": "~0.8.1",
+        "grunt-contrib-jshint": "~0.8.0",
+        "chai": "~1.8.1"
+    },
+    "peerDependencies": {
+        "grunt": "~0.4.2"
+    }
+}
