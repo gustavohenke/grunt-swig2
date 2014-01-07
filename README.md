@@ -2,6 +2,8 @@
 > Task for rendering [Swig templates](http://paularmstrong.github.io/swig)
 
 [![Build Status](https://travis-ci.org/gustavohenke/grunt-swig2.png?branch=master)](https://travis-ci.org/gustavohenke/grunt-swig2)
+[![Dependency Status](https://gemnasium.com/gustavohenke/grunt-swig2.png)](https://gemnasium.com/gustavohenke/grunt-swig2)
+[![NPM version](https://badge.fury.io/js/grunt-swig2.png)](http://badge.fury.io/js/grunt-swig2)
 
 ## Getting started
 This plugin requires Grunt `~0.4.2`
