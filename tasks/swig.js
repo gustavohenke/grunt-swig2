@@ -14,6 +14,11 @@ module.exports = function( grunt ) {
         });
         var swig = new Swig( options.swigOptions );
 
+        // Add custom filters
+        _.forEach( options.filters, function( callback, name ) {
+            swig.setFilter( name, callback );
+        });
+
         // Add custom tags
         _.forEach( options.tags, function( tag, name ) {
             swig.setTag( name, tag.parse, tag.compile, tag.ends, tag.blockLevel );

@@ -32,6 +32,24 @@ Default: `{}`
 
 Locals that will be passed to each template when rendering.
 
+#### filters
+Type: `Object`
+Default: `{}`
+
+Object containing [custom Swig filters](http://paularmstrong.github.io/swig/docs/extending/#filters), where the key is the filter name and the value is the filter function.
+Example:
+
+```javascript
+options: {
+    filters: {
+        // Makes strings more exciting
+        makeExciting: function( input ) {
+            return input + "!!!";
+        }
+    }
+}
+```
+
 #### tags
 Type: `Object`
 Default: `{}`

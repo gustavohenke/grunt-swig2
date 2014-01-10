@@ -47,8 +47,21 @@ suite( "grunt-swig2", function() {
         });
     });
 
+    test( "should add swig filters", function( done ) {
+        grunt.util.spawn({
+            grunt: true,
+            args: [ "swig:filter" ]
+        }, function() {
+            var actual = grunt.file.read( "actual/filter.html" );
+            var expected = grunt.file.read( "expected/filter.html" );
+
+            expect( expected ).to.equal( actual );
+            done();
+        });
+    });
+
     suite( "tags", function() {
-        test( "should add Swig tag", function( done ) {
+        test( "should add swig tag", function( done ) {
             grunt.util.spawn({
                 grunt: true,
                 args: [ "swig:tag" ]

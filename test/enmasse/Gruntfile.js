@@ -42,6 +42,17 @@ module.exports = function( grunt ) {
                 },
                 src: "../fixtures/tagExtension.swig",
                 dest: "actual/tagExtension.html"
+            },
+            filter: {
+                options: {
+                    filters: {
+                        makeExciting: function( input ) {
+                            return String( input ) + "!!!";
+                        }
+                    }
+                },
+                src: "../fixtures/filter.swig",
+                dest: "actual/filter.html"
             }
         }
     });
