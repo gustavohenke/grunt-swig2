@@ -8,6 +8,25 @@ module.exports = function( grunt ) {
                 tasks: [ "default" ]
             }
         },
+        bump: {
+            options: {
+                files: [ "package.json" ],
+
+                // Commit
+                commit: true,
+                commitMessage: "Release v%VERSION%",
+                commitFiles: [ "package.json" ],
+
+                // Tag
+                createTag: true,
+                tagName: "%VERSION%",
+                tagMessage: "Version %VERSION%",
+
+                // Push
+                push: true,
+                pushTo: "origin"
+            }
+        },
         jshint: {
             all: {
                 options: {
@@ -36,6 +55,7 @@ module.exports = function( grunt ) {
 
     grunt.loadTasks( "tasks" );
 
+    grunt.loadNpmTasks( "grunt-bump" );
     grunt.loadNpmTasks( "grunt-mocha-test" );
     grunt.loadNpmTasks( "grunt-jscs-checker" );
     grunt.loadNpmTasks( "grunt-contrib-jshint" );
