@@ -13,6 +13,7 @@
         "grunt-jscs-checker": "~0.3.0",
         "grunt-mocha-test": "~0.8.1",
         "grunt-contrib-jshint": "~0.8.0",
+        "grunt-contrib-watch": "~0.5.3",
         "chai": "~1.8.1"
     },
     "peerDependencies": {

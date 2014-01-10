@@ -2,6 +2,12 @@ module.exports = function( grunt ) {
     "use strict";
 
     grunt.initConfig({
+        watch: {
+            all: {
+                files: [ "tasks/**/*.js", "test/**/*.js" ],
+                tasks: [ "default" ]
+            }
+        },
         jshint: {
             all: {
                 options: {
@@ -33,6 +39,7 @@ module.exports = function( grunt ) {
     grunt.loadNpmTasks( "grunt-mocha-test" );
     grunt.loadNpmTasks( "grunt-jscs-checker" );
     grunt.loadNpmTasks( "grunt-contrib-jshint" );
+    grunt.loadNpmTasks( "grunt-contrib-watch" );
 
     grunt.registerTask( "test", "mochaTest" );
     grunt.registerTask( "default", [ "jshint", "jscs", "test" ] );
