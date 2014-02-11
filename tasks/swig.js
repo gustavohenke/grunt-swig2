@@ -4,7 +4,9 @@ module.exports = function( grunt ) {
     // _ has been deprecated and will be removed in the future.
     // Ideally move to lodash itself whenever possible
     var _ = grunt.util._;
-    var Swig = require( "swig" ).Swig;
+    var swig = require( "swig" );
+    var loaders = swig.loaders;
+    var Swig = swig.Swig;
 
     grunt.registerMultiTask( "swig", "Render Swig templates to HTML", function() {
         var options = this.options({
@@ -12,7 +14,13 @@ module.exports = function( grunt ) {
             tags: {},
             swigOptions: {}
         });
-        var swig = new Swig( options.swigOptions );
+        var data = options.data;
+
+        // Until the fix with paularmstrong/swig#419 gets released, we'll do this way.
+        var swigOpts = _.extend( options.swigOptions, {
+            loader: loaders.fs( process.cwd() )
+        });
+        var swig = new Swig( swigOpts );
 
         // Add custom filters
         _.forEach( options.filters, function( callback, name ) {
@@ -28,12 +36,18 @@ module.exports = function( grunt ) {
             }
         });
 
+        // If we have dynamic locals, let's do this
+        if ( typeof data === "function" ) {
+            data = data();
+            data = grunt.config.process( data );
+        }
+
         // Iterate thru sources and create them
         this.files.forEach(function( file ) {
             var contents = "";
 
             file.src.forEach(function( src ) {
-                contents += swig.renderFile( src, _.clone( options.data ) );
+                contents += swig.renderFile( src, _.clone( data ) );
             });
 
             grunt.file.write( file.dest, contents, {

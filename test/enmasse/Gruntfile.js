@@ -12,6 +12,15 @@ module.exports = function( grunt ) {
                 src: "../fixtures/simple.swig",
                 dest: "actual/simple.html"
             },
+            dynamicData: {
+                options: {
+                    data: function() {
+                        return "<%= swig.options.data %>";
+                    }
+                },
+                src: "../fixtures/dynamicData.swig",
+                dest: "actual/dynamicData.html"
+            },
             joined: {
                 src: [ "../fixtures/joined/*.swig" ],
                 dest: "actual/joined.html"
