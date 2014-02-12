@@ -34,6 +34,22 @@ suite( "grunt-swig2", function() {
         });
     });
 
+    test(
+        "should allow using a function to define locals, with Grunt templating support",
+        function( done ) {
+            grunt.util.spawn({
+                grunt: true,
+                args: [ "swig:dynamicData" ]
+            }, function() {
+                var actual = grunt.file.read( "actual/dynamicData.html" );
+                var expected = grunt.file.read( "expected/dynamicData.html" );
+
+                expect( expected ).to.equal( actual );
+                done();
+            });
+        }
+    );
+
     test( "should allow passing custom Swig options", function( done ) {
         grunt.util.spawn({
             grunt: true,
