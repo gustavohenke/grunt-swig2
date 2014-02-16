@@ -4,9 +4,7 @@ module.exports = function( grunt ) {
     // _ has been deprecated and will be removed in the future.
     // Ideally move to lodash itself whenever possible
     var _ = grunt.util._;
-    var swig = require( "swig" );
-    var loaders = swig.loaders;
-    var Swig = swig.Swig;
+    var Swig = require( "swig" ).Swig;
 
     grunt.registerMultiTask( "swig", "Render Swig templates to HTML", function() {
         var options = this.options({
@@ -15,12 +13,7 @@ module.exports = function( grunt ) {
             swigOptions: {}
         });
         var data = options.data;
-
-        // Until the fix with paularmstrong/swig#419 gets released, we'll do this way.
-        var swigOpts = _.extend( options.swigOptions, {
-            loader: loaders.fs( process.cwd() )
-        });
-        var swig = new Swig( swigOpts );
+        var swig = new Swig( options.swigOptions );
 
         // Add custom filters
         _.forEach( options.filters, function( callback, name ) {
