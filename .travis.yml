@@ -3,3 +3,17 @@ install: npm install
 language: node_js
 node_js:
 - "0.10"
+
+# Env vars
+env:
+  global:
+    # NPM_KEY
+    - secure: ERAehqYdn0mBIFRT9OxMmiSEzyiQN4JwKgDqDbE8qAH+l1UpVP1jrAPve4z8MdG4hhhdhcAPFLzBsGh7u8QXlhG+FKD4QgJDJ9C5xZIZCIonhtWIwhKanuAypjDzknFOTElvvCHTTEuv+rfIf0AJqGe9s8K6c44Va68uJlZomhc=
+
+# NPM Deployment
+deploy:
+  provider: npm
+  email: "gustavo@injoin.com.br"
+  api_key: "${NPM_KEY}"
+  on:
+    tags: true
