@@ -20,6 +20,11 @@
     "peerDependencies": {
         "grunt": "~0.4.2"
     },
+    "keywords": [
+        "gruntplugin",
+        "swig",
+        "template"
+    ],
     "scripts": {
         "test": "grunt"
     }
