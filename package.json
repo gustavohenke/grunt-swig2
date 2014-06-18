@@ -1,7 +1,7 @@
 {
     "name": "grunt-swig2",
     "description": "Grunt task for rendering Swig templates.",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "repository": {
         "type": "git",
         "url": "http://github.com/gustavohenke/grunt-swig2.git"
