@@ -40,6 +40,9 @@ module.exports = function( grunt ) {
             }
         },
         jscs: {
+            options: {
+                config: ".jscs.json"
+            },
             all: "<%= jshint.all.src %>"
         },
         mochaTest: {
