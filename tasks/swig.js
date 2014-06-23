@@ -49,7 +49,7 @@ module.exports = function( grunt ) {
 
             file.src.forEach(function( src ) {
                 
-                jsonPath = path.resolve( src ).replace( 'swig', 'json' );
+                jsonPath = path.resolve( src ).replace( "swig", "json" );
 
                 if ( grunt.file.exists( jsonPath ) ) {
                     _.extend( data, grunt.file.readJSON( jsonPath ) );
