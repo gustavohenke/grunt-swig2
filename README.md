@@ -2,7 +2,8 @@
 > Task for rendering [Swig templates](http://paularmstrong.github.io/swig)
 
 [![Build Status](https://travis-ci.org/gustavohenke/grunt-swig2.png?branch=master)](https://travis-ci.org/gustavohenke/grunt-swig2)
-[![Dependency Status](https://gemnasium.com/gustavohenke/grunt-swig2.png)](https://gemnasium.com/gustavohenke/grunt-swig2)
+[![Dependency Status](https://david-dm.org/gustavohenke/grunt-swig2.png)](https://david-dm.org/gustavohenke/grunt-swig2)
+[![devDependency Status](https://david-dm.org/gustavohenke/grunt-swig2/dev-status.png)](https://david-dm.org/gustavohenke/grunt-swig2#info=devDependencies)
 [![NPM version](https://badge.fury.io/js/grunt-swig2.png)](http://badge.fury.io/js/grunt-swig2)
 
 ## Getting started
