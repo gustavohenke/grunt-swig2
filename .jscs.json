@@ -1,22 +1,35 @@
 {
-    "requireCurlyBraces":                   [ "if", "else", "for", "while", "do", "switch" ],
-    "requireSpaceAfterKeywords":            [ "if", "else", "for", "while", "do", "switch" ],
+    "requireCurlyBraces":                   [ "if", "else", "for", "while", "do", "switch", "try", "catch" ],
+    "requireSpaceAfterKeywords":            [ "if", "else", "for", "while", "do", "switch", "try", "catch", "return", "typeof" ],
     "disallowSpaceAfterKeywords":           [],
     "requireSpacesInsideObjectBrackets":    "all",
     "disallowSpaceAfterObjectKeys":         true,
-    "disallowLeftStickedOperators":         [ "?", "+", "-", "/", "*", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<=" ],
-    "requireRightStickedOperators":         [ "!" ],
-    "disallowRightStickedOperators":        [ "?", "/", "*", ":", "=", "==", "===", "!=", "!==", ">", ">=", "<", "<=" ],
-    "requireLeftStickedOperators":          [ "," ],
     "disallowImplicitTypeConversion":       [],
     "disallowKeywords":                     [ "with" ],
     "disallowMultipleLineBreaks":           true,
     "disallowKeywordsOnNewLine":            [ "else" ],
     "requireKeywordsOnNewLine":             [],
-    "validateJSDoc": {
-        "checkParamNames":      true,
-        "checkRedundantParams": true,
-        "requireParamTypes":    true
+    "requireSpacesInsideParentheses": {
+        "all": true,
+        "except": [ "[", "]", "{", "}", "(", ")", "function" ]
     },
+    "requireSpacesInConditionalExpression": {
+        "afterTest": true,
+        "beforeConsequent": true,
+        "afterConsequent": true,
+        "beforeAlternate": true
+    },
+    "requireSpacesInFunction": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInFunction": {
+        "beforeOpeningRoundBrace": true
+    },
+    "requireDotNotation":                   true,
+    "disallowYodaConditions":               true,
+    "validateLineBreaks":                   "LF",
+    "validateQuoteMarks":                   "\"",
+    "validateIndentation":                  4,
+    "validateParameterSeparator":           ", ",
     "excludeFiles": [ "node_modules/**" ]
 }

@@ -35,7 +35,7 @@ module.exports = function( grunt ) {
             data = grunt.config.process( data );
         } else if ( Array.isArray( data ) ) {
             // Merge array of data into a single object (see #5)
-            data = data.reduce(function ( memo, next ) {
+            data = data.reduce(function( memo, next ) {
                 return _.extend( memo, next );
             }, {});
         }
