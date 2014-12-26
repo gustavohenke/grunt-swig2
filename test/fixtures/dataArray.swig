@@ -1,0 +1,1 @@
+<p>My name is {{ foo }} {{ bar }} and I like to sing "{{ abc }}, easy as {{ xyz }}".</p>

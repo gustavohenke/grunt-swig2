@@ -50,6 +50,19 @@ suite( "grunt-swig2", function() {
         }
     );
 
+    test( "should merge array of data into a single object", function( done ) {
+        grunt.util.spawn({
+            grunt: true,
+            args: [ "swig:dataArray" ]
+        }, function() {
+            var actual = grunt.file.read( "actual/dataArray.html" );
+            var expected = grunt.file.read( "expected/dataArray.html" );
+
+            expect( expected ).to.equal( actual );
+            done();
+        });
+    });
+
     test( "should allow passing custom Swig options", function( done ) {
         grunt.util.spawn({
             grunt: true,

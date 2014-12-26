@@ -62,6 +62,18 @@ module.exports = function( grunt ) {
                 },
                 src: "../fixtures/filter.swig",
                 dest: "actual/filter.html"
+            },
+            dataArray: {
+                options: {
+                    data: [
+                        { foo: "Foo", bar: "Baz" },
+                        { xyz: 123 },
+                        { foo: "Foobar" },
+                        { abc: "ABC" }
+                    ]
+                },
+                src: "../fixtures/dataArray.swig",
+                dest: "actual/dataArray.html"
             }
         }
     });

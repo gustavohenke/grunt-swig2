@@ -28,10 +28,11 @@ Task targets, files and options may be specified according to the grunt [Configu
 
 ### Options
 #### data
-Type: `Object`, `Function`
+Type: `Object`, `Array`, `Function`
 Default: `{}`
 
 Locals that will be passed to each template when rendering. If this is a function, then it will be called once per target with no args.
+If this is an array, then the values will be merged into a single object.
 
 #### filters
 Type: `Object`

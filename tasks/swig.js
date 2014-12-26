@@ -29,10 +29,15 @@ module.exports = function( grunt ) {
             }
         });
 
-        // If we have dynamic locals, let's do this
         if ( typeof data === "function" ) {
+            // If we have dynamic locals, let's do this
             data = data();
             data = grunt.config.process( data );
+        } else if ( Array.isArray( data ) ) {
+            // Merge array of data into a single object (see #5)
+            data = data.reduce(function ( memo, next ) {
+                return _.extend( memo, next );
+            }, {});
         }
 
         // Iterate thru sources and create them
