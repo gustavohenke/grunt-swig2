@@ -1,10 +1,10 @@
 # grunt-swig2
 > Task for rendering [Swig templates](http://paularmstrong.github.io/swig)
 
-[![Build Status](https://travis-ci.org/gustavohenke/grunt-swig2.png?branch=master)](https://travis-ci.org/gustavohenke/grunt-swig2)
-[![Dependency Status](https://david-dm.org/gustavohenke/grunt-swig2.png)](https://david-dm.org/gustavohenke/grunt-swig2)
-[![devDependency Status](https://david-dm.org/gustavohenke/grunt-swig2/dev-status.png)](https://david-dm.org/gustavohenke/grunt-swig2#info=devDependencies)
-[![NPM version](https://badge.fury.io/js/grunt-swig2.png)](http://badge.fury.io/js/grunt-swig2)
+[![Build Status](https://img.shields.io/travis/gustavohenke/grunt-swig2.svg?style=flat-square)](https://travis-ci.org/gustavohenke/grunt-swig2)
+[![Dependency Status](https://img.shields.io/david/gustavohenke/grunt-swig2.svg?style=flat-square)](https://david-dm.org/gustavohenke/grunt-swig2)
+[![devDependency Status](https://img.shields.io/david/dev/gustavohenke/grunt-swig2.svg?style=flat-square)](https://david-dm.org/gustavohenke/grunt-swig2#info=devDependencies)
+[![NPM version](https://img.shields.io/npm/v/grunt-swig2.svg?style=flat-square)](http://badge.fury.io/js/grunt-swig2)
 
 ## Getting started
 This plugin requires Grunt `~0.4.2`
