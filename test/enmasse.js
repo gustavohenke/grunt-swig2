@@ -4,6 +4,10 @@ suite( "grunt-swig2", function() {
     var grunt = require( "grunt" );
     var expect = require( "chai" ).expect;
 
+    // Define an slow test as 2 seconds. All tests here trigger external grunt process.
+    this.slow( 2000 );
+    this.timeout( 3000 );
+
     suiteSetup(function() {
         grunt.file.setBase( "test/enmasse" );
     });
