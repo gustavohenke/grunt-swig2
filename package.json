@@ -10,6 +10,7 @@
         "swig": "~1.2.2"
     },
     "devDependencies": {
+        "grunt": "~0.4.0"
         "grunt-bump": "~0.0.14",
         "grunt-jscs": "~1.1.0",
         "grunt-mocha-test": "~0.12.4",
