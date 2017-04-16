@@ -4,7 +4,9 @@ module.exports = function( grunt ) {
     // _ has been deprecated and will be removed in the future.
     // Ideally move to lodash itself whenever possible
     var _ = grunt.util._;
-    var Swig = require( "swig" ).Swig;
+    var path = require("path");
+    var swig = require("swig");
+    var Swig = swig.Swig;
 
     grunt.registerMultiTask( "swig", "Render Swig templates to HTML", function() {
         var options = this.options({
@@ -13,7 +15,12 @@ module.exports = function( grunt ) {
             swigOptions: {}
         });
         var data = options.data;
-        var swig = new Swig( options.swigOptions );
+        
+        swig.setDefaults({
+            loader: swig.loaders.fs( options.basepath )
+        });
+
+        swig = new Swig(options.swigOptions);
 
         // Add custom filters
         _.forEach( options.filters, function( callback, name ) {
@@ -43,8 +50,16 @@ module.exports = function( grunt ) {
         // Iterate thru sources and create them
         this.files.forEach(function( file ) {
             var contents = "";
+            var jsonPath = "";
 
             file.src.forEach(function( src ) {
+                
+                jsonPath = path.resolve( src ).replace( "swig", "json" );
+
+                if ( grunt.file.exists( jsonPath ) ) {
+                    _.extend( data, grunt.file.readJSON( jsonPath ) );
+                }
+                
                 contents += swig.renderFile( src, _.clone( data ) );
             });
 
